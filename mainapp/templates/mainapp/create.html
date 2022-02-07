@@ -1,0 +1,15 @@
+{% extends 'mainapp/base.html' %}
+{% block tittle %}
+    create task
+{% endblock %}
+
+{% block content %}
+    <h2>create</h2>
+    <form method="post">
+    {% csrf_token %}
+        {{ form.title }}
+        {{ form.task }}
+        <button type="submit" class="btn btn-success">add</button>
+    </form>
+    <a href="{% url 'main' %}"> to main </a>
+{% endblock %}

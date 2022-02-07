@@ -8,7 +8,9 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad adipisci maxime nesciunt nihil quisquam ratione ut
         voluptatem? Asperiores itaque molestias non sint? Aliquid corporis est nihil perspiciatis porro, temporibus?</p>
     <a href="{% url 'about' %}">to about</a>
+    <a href="{% url 'create' %}"> create</a>
     <ul>
+    {% if tasks %}
         {% for element in tasks %}
             <li>
             <div class="card" style="width: 18rem;">
@@ -20,6 +22,8 @@
             </div>
             </li>
         {% endfor %}
+    {% else %}
+    <h4>noting to do</h4>
+    {% endif %}
     </ul>
-
 {% endblock %}
