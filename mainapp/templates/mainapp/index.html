@@ -1,0 +1,25 @@
+{% extends 'mainapp/base.html' %}
+{% block tittle %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>prikol </h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad adipisci maxime nesciunt nihil quisquam ratione ut
+        voluptatem? Asperiores itaque molestias non sint? Aliquid corporis est nihil perspiciatis porro, temporibus?</p>
+    <a href="{% url 'about' %}">to about</a>
+    <ul>
+        {% for element in tasks %}
+            <li>
+            <div class="card" style="width: 18rem;">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/done-21-436115.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ element.title }}</h5>
+                    <p class="card-text">{{ element.task }}</p>
+                </div>
+            </div>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
